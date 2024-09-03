@@ -17,6 +17,7 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Hero Section Styles */
 .hero-heading {
   color: #000000; /* Set the text color to black or any desired color */
   font-size: 3rem; /* Adjust the font size as needed */
@@ -31,7 +32,6 @@ html {
   font-weight: 500; /* Semi-bold text */
   text-align: center; /* Center the text */
 }
-
 
 /* Custom styles for navigation links */
 .nav-link {
@@ -207,6 +207,7 @@ html {
   to { transform: rotate(360deg); }
 }
 
+/* New Component Section */
 .new-component-box {
   max-width: 600px; /* Adjust the width as needed */
 }
@@ -225,28 +226,9 @@ html {
   left: 50%;
   transform: translateX(-50%);
   color: #bbbbbb;
-
 }
-
 
 /* Form Input and Button Styles */
-/* Contact Form Container */
-.contact-form-container {
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 2rem;
-  background: white;
-  border-radius: 0.75rem;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.contact-form-container:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-/* Form Fields */
 /* Contact Form Container */
 .contact-form-container {
   max-width: 600px;
@@ -290,99 +272,126 @@ html {
   border-radius: 0.5rem;
   font-size: 1rem;
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
-  box-sizing: border-box;
 }
 
 .form-input:focus, .form-textarea:focus {
   border-color: #007bff;
-  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
   outline: none;
-}
-
-/* Textarea Specific Styles */
-.form-textarea {
-  resize: vertical;
-  min-height: 150px;
 }
 
 /* Submit Button */
 .submit-button {
-  background-color: #007bff;
+  display: inline-block;
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  font-weight: bold;
   color: white;
-  padding: 1rem;
+  background-color: #007bff;
   border: none;
   border-radius: 0.5rem;
-  font-size: 1rem;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.3s ease;
-  margin-top: 1rem;
 }
 
 .submit-button:hover {
   background-color: #0056b3;
-  transform: scale(1.05);
+  transform: translateY(-2px);
 }
 
-.submit-button:active {
-  background-color: #004494;
+/* Footer Styles */
+.footer {
+  background: #f1f1f1;
+  padding: 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #ddd;
 }
 
-/* Hero Section Styles */
-.hero-container {
-  position: relative;
-  /* Existing Hero Section Styles */
-}
-
-/* Footer Container */
-.footer-container {
-  background-color: #333;
-  color: white;
-  padding: 2rem 1rem;
-  text-align: center;
-  margin-top: 2rem; /* Adjust margin as needed to separate from other Hero content */
-}
-
-.footer-content {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.footer-text {
-  margin-bottom: 1.5rem;
-}
-
-.footer-heading {
-  font-size: 1.2rem;
-  line-height: 1.6;
+.footer-logo {
+  font-size: 1.25rem;
+  font-weight: bold;
 }
 
 .footer-info {
   display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  margin-bottom: 1.5rem;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.footer-info h3 {
-  font-size: 1.1rem;
-  margin-bottom: 0.5rem;
+.footer-info .text {
+  margin-right: 2rem;
+  font-size: 1rem;
+  text-align: left;
 }
 
-.footer-info p {
-  margin: 0;
+.footer-info .social-icons {
+  display: flex;
+  gap: 1rem;
+}
+
+.footer-info .social-icons a {
+  font-size: 1.5rem;
+  color: #333;
 }
 
 .footer-bottom {
-  font-size: 0.9rem;
+  text-align: center;
+  font-size: 0.875rem;
+  color: #888;
 }
 
-.footer-bottom a {
-  color: #007bff;
-  text-decoration: none;
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-heading {
+    font-size: 2.5rem;
+  }
+
+  .hero-subheading {
+    font-size: 1.5rem;
+  }
+
+  .nav-link {
+    font-size: 1rem;
+  }
+
+  .project-box {
+    width: calc(50% - 2rem);
+    margin-bottom: 1rem;
+  }
+
+  .testimonial-box {
+    padding: 1.5rem;
+  }
+
+  .contact-form-container {
+    padding: 1.5rem;
+  }
+
+  .footer {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
-.footer-bottom a:hover {
-  text-decoration: underline;
+@media (max-width: 640px) {
+  .hero-heading {
+    font-size: 2rem;
+  }
+
+  .hero-subheading {
+    font-size: 1.25rem;
+  }
+
+  .project-box {
+    width: calc(100% - 2rem);
+    margin-bottom: 1rem;
+  }
+
+  .footer-info {
+    flex-direction: column;
+    text-align: center;
+  }
 }
-
-
