@@ -107,12 +107,6 @@ html {
 }
 
 
-/* Text alignment */
-.typing-text {
-  display: inline;
-  font-size: 2rem;
-}
-
 /* Style for Mission Image */
 .mission-image {
   max-width: 80%; /* Adjust to desired size */
