@@ -29,49 +29,56 @@
   <!-- Robots.txt -->
   <meta name="robots" content="index, follow">
 </head>
-<body>
-  <header class="relative">
-    <!-- Mobile Menu Button -->
-    <button id="mobile-menu-button" class="block lg:hidden p-4 text-gray-500">
-      <i class="fas fa-bars"></i>
-    </button>
-    
-    <!-- Navbar -->
-    <nav id="navbar" class="hidden lg:flex lg:items-center lg:justify-between">
-      <ul class="flex space-x-4">
-        <li><a href="#about" class="nav-link">About Us</a></li>
-        <li><a href="#projects" class="nav-link">Flagship Projects</a></li>
-        <li><a href="#contact" class="nav-link">Contact Now</a></li>
-        <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
-      </ul>
-    </nav>
-    
-    <!-- Mobile Menu -->
-    <div id="mobile-menu" class="fixed top-0 left-0 w-full h-screen bg-white shadow-lg z-50 transform -translate-x-full transition-transform duration-300 ease-in-out">
-      <button id="close-menu" class="p-4 text-gray-500 absolute top-4 right-4">
-        <i class="fas fa-times"></i>
-      </button>
-      <ul class="flex flex-col items-center justify-center h-full space-y-4">
-        <li><a href="#about" class="nav-link">About Us</a></li>
-        <li><a href="#projects" class="nav-link">Flagship Projects</a></li>
-        <li><a href="#contact" class="nav-link">Contact Now</a></li>
-        <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
-      </ul>
+<body class="bg-gray-100">
+  <header class="relative bg-white shadow-md">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center py-6">
+        <!-- Logo -->
+        <div class="text-lg font-semibold">SidLabs</div>
+
+        <!-- Mobile Menu Button -->
+        <div class="lg:hidden">
+          <button id="mobile-menu-button" class="text-gray-500 focus:outline-none">
+            <i class="fas fa-bars fa-2x"></i>
+          </button>
+        </div>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden lg:flex space-x-8">
+          <a href="#about" class="nav-link">About Us</a>
+          <a href="#projects" class="nav-link">Flagship Projects</a>
+          <a href="#contact" class="nav-link">Contact Now</a>
+          <a href="#testimonials" class="nav-link">Testimonials</a>
+        </nav>
+      </div>
+    </div>
+
+    <!-- Mobile Menu (hidden by default) -->
+    <div id="mobile-menu" class="lg:hidden fixed top-0 left-0 w-full h-full bg-white transform -translate-x-full transition-transform duration-300 ease-in-out">
+      <div class="flex justify-between items-center p-4">
+        <div class="text-lg font-semibold">SidLabs</div>
+        <button id="close-menu" class="text-gray-500">
+          <i class="fas fa-times fa-2x"></i>
+        </button>
+      </div>
+      <nav class="flex flex-col items-center mt-8 space-y-6">
+        <a href="#about" class="nav-link text-2xl">About Us</a>
+        <a href="#projects" class="nav-link text-2xl">Flagship Projects</a>
+        <a href="#contact" class="nav-link text-2xl">Contact Now</a>
+        <a href="#testimonials" class="nav-link text-2xl">Testimonials</a>
+      </nav>
     </div>
   </header>
-  
+
   <div id="root"></div>
   
   <!-- React Scripts -->
   <script src="/index.js"></script>
+
   <!-- Mobile Menu Toggle Script -->
   <script>
     document.getElementById('mobile-menu-button').addEventListener('click', function() {
       document.getElementById('mobile-menu').classList.remove('-translate-x-full');
     });
     document.getElementById('close-menu').addEventListener('click', function() {
-      document.getElementById('mobile-menu').classList.add('-translate-x-full');
-    });
-  </script>
-</body>
-</html>
+      document.getElementById('mobile-menu').classList
