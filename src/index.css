@@ -395,29 +395,3 @@ html {
     text-align: center;
   }
 }
-/* General styles */
-body {
-  font-family: 'Montserrat', sans-serif;
-}
-
-/* Navbar Links */
-.nav-link {
-  @apply text-lg font-medium text-black transition-colors duration-300 ease-in-out;
-}
-
-.nav-link:hover {
-  color: blue;
-}
-
-#mobile-menu {
-  transition: transform 0.3s ease-in-out;
-}
-
-@media (min-width: 1024px) {
-  #mobile-menu {
-    display: none; /* Hide mobile menu for larger screens */
-  }
-}
-
-
-
