@@ -395,3 +395,33 @@ html {
     text-align: center;
   }
 }
+
+/* Mobile View - Add spacing between logo and navigation */
+@media (max-width: 768px) {
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem; /* Ensure padding around the navbar */
+  }
+
+  .logo {
+    margin-right: 1rem; /* Add space between the logo and the menu */
+  }
+
+  .nav-links {
+    display: flex;
+    flex-direction: column; /* Stack links vertically */
+    margin-top: 1rem; /* Add space between logo and links */
+  }
+
+  .nav-link {
+    margin-bottom: 0.5rem; /* Space between each nav link */
+    font-size: 1rem; /* Adjust font size for mobile */
+  }
+}
+
+/* Ensure the logo does not collide with menu */
+.navbar {
+  padding: 0 1.5rem; /* Adjust padding to prevent crowding */
+}
