@@ -75,8 +75,8 @@ html {
     display: inline-block;
     white-space: nowrap;
     overflow: hidden;
-    border-right: 3px solid rgba(0, 0, 0, 0.75); /* Cursor effect */
     font-size: 2rem; /* Adjust font size for web view */
+    border-right: 0; /* Remove caret effect */
     animation: typing 5s steps(40, end), blink-caret 0.75s step-end infinite;
   }
 
@@ -96,7 +96,7 @@ html {
       border-color: transparent;
     }
     50% {
-      border-color: rgba(0, 0, 0, 0.75);
+      border-color: transparent; /* Hide cursor line */
     }
   }
 }
@@ -111,8 +111,6 @@ html {
     animation: none; /* Disable typing animation */
   }
 }
-
-
 
 
 /* Style for Mission Image */
