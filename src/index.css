@@ -69,31 +69,39 @@ html {
   transition: transform 0.3s ease-in-out;
 }
 
-/* Typing effect styles for web view */
+/* Smooth Typing effect styles for web view */
 @media (min-width: 641px) {
   .typing-container {
     display: inline-block;
     white-space: nowrap;
     overflow: hidden;
     border-right: 3px solid rgba(0, 0, 0, 0.75); /* Cursor effect */
-    animation: typing 3.5s steps(40, end) 1s 1 normal both, blink-caret 500ms steps(40, end) infinite normal both;
     font-size: 2rem; /* Adjust font size for web view */
+    animation: typing 5s steps(40, end), blink-caret 0.75s step-end infinite;
   }
 
-  /* Keyframes for typing effect */
+  /* Keyframes for smooth typing effect */
   @keyframes typing {
-    from { width: 0; }
-    to { width: 100%; }
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
   }
 
-  /* Keyframes for blinking caret */
+  /* Keyframes for smooth blinking caret */
   @keyframes blink-caret {
-    from, to { border-color: transparent; }
-    50% { border-color: rgba(0, 0, 0, 0.75); }
+    from, to {
+      border-color: transparent;
+    }
+    50% {
+      border-color: rgba(0, 0, 0, 0.75);
+    }
   }
 }
 
-/* For mobile view, no typing effect */
+/* Disable Typing effect for mobile view */
 @media (max-width: 640px) {
   .typing-container {
     display: inline-block;
@@ -103,6 +111,7 @@ html {
     animation: none; /* Disable typing animation */
   }
 }
+
 
 
 
