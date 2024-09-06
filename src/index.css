@@ -75,18 +75,37 @@ html {
   white-space: nowrap;
   overflow: hidden;
   border-right: 3px solid rgba(0, 0, 0, 0.75); /* Cursor effect */
-  animation: typing 3.5s steps(40, end) 1s 1 normal both, blink-caret 500ms steps(40, end) 1s 1 normal both;
+  animation: typing 3.5s steps(40, end) 1s 1 normal both, blink-caret 500ms steps(40, end) infinite normal both;
+  font-size: 2rem;
 }
 
+/* Keyframes for typing effect */
 @keyframes typing {
   from { width: 0; }
   to { width: 100%; }
 }
 
+/* Keyframes for blinking caret */
 @keyframes blink-caret {
   from, to { border-color: transparent; }
   50% { border-color: rgba(0, 0, 0, 0.75); }
 }
+
+/* Typing effect for mobile */
+@media (max-width: 640px) {
+  .typing-container {
+    font-size: 1.25rem; /* Reduce font size for mobile */
+    border-right: 2px solid rgba(0, 0, 0, 0.75); /* Adjust cursor thickness */
+    animation: typing-mobile 3.5s steps(30, end) 1s 1 normal both, blink-caret 500ms steps(40, end) infinite normal both;
+  }
+  
+  /* Mobile-specific typing keyframes */
+  @keyframes typing-mobile {
+    from { width: 0; }
+    to { width: 100%; }
+  }
+}
+
 
 /* Text alignment */
 .typing-text {
