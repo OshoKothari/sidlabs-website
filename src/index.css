@@ -3,11 +3,11 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Import a modern font and Font Awesome */
+/* Import modern font and Font Awesome */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
 
-/* Apply the modern font to the whole document */
+/* Apply modern font to the entire document */
 body {
   font-family: 'Montserrat', sans-serif;
 }
@@ -17,381 +17,195 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Hero Section Styles */
+/* Hero Section */
 .hero-heading {
-  color: #000000; /* Set the text color to black or any desired color */
-  font-size: 3rem; /* Adjust the font size as needed */
-  font-weight: 700; /* Make the text bold */
-  text-align: center; /* Center the text */
-  margin-bottom: 1rem; /* Space between elements */
+  color: #000;
+  font-size: 2.5rem; /* Adjusted for mobile */
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 1rem;
 }
 
 .hero-subheading {
-  color: #000000; /* Set the text color to black or any desired color */
-  font-size: 2rem; /* Adjust the font size as needed */
-  font-weight: 500; /* Semi-bold text */
-  text-align: center; /* Center the text */
+  color: #000;
+  font-size: 1.5rem; /* Adjusted for mobile */
+  font-weight: 500;
+  text-align: center;
 }
 
-/* Custom styles for navigation links */
+/* Responsive Nav Links */
 .nav-link {
-  @apply inline-block text-xl font-medium text-black transition-colors duration-300 ease-in-out relative;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3); /* Shadow effect for separation */
-}
-
-.nav-link::after {
-  content: '';
-  position: absolute;
-  bottom: -2px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: blue;
-  transition: width 0.3s ease-in-out;
+  @apply inline-block text-lg font-medium text-black transition-colors duration-300 ease-in-out relative;
 }
 
 .nav-link:hover {
-  color: blue; /* Change text color to blue on hover */
+  color: blue;
 }
 
-.nav-link:hover::after {
-  width: 100%;
-}
-
-/* Custom styles for Explore Now button */
+/* Explore Now Button */
 .explore-button {
-  @apply inline-flex items-center justify-center px-6 py-4 mt-6 text-xl font-semibold text-white bg-red-500 rounded-full shadow-md transition-colors duration-300 ease-in-out transform hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-300;
+  @apply inline-flex items-center justify-center px-4 py-3 mt-6 text-lg font-semibold text-white bg-red-500 rounded-full shadow-md transition-colors duration-300 ease-in-out transform hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-300;
 }
 
-/* Icon styles */
-.explore-button i {
-  margin-left: 0.75rem; /* Space between text and icon */
-  transition: transform 0.3s ease-in-out;
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .hero-heading {
+    font-size: 2rem;
+  }
+  
+  .hero-subheading {
+    font-size: 1.25rem;
+  }
+  
+  .explore-button {
+    font-size: 1rem;
+    padding: 0.75rem 1.5rem;
+  }
 }
 
-/* Typing effect styles */
-.typing-container {
-  display: inline-block;
-  white-space: nowrap;
-  overflow: hidden;
-  border-right: 3px solid rgba(0, 0, 0, 0.75); /* Cursor effect */
-  animation: typing 3.5s steps(40, end) 1s 1 normal both, blink-caret 500ms steps(40, end) 1s 1 normal both;
-}
-
-@keyframes typing {
-  from { width: 0; }
-  to { width: 100%; }
-}
-
-@keyframes blink-caret {
-  from, to { border-color: transparent; }
-  50% { border-color: rgba(0, 0, 0, 0.75); }
-}
-
-/* Text alignment */
-.typing-text {
-  display: inline;
-  font-size: 2rem;
-}
-
-/* Style for Mission Image */
-.mission-image {
-  max-width: 80%; /* Adjust to desired size */
-  height: auto;   /* Maintain aspect ratio */
-  max-width: 400px; /* Limit maximum width */
-  margin: 0 auto; /* Center the image */
-}
-
-/* Flagship Projects Section */
-#projects {
-  background-color: white;
-  padding: 4rem 2rem; /* Add padding for better spacing */
-  text-align: center; /* Center text */
-}
-
-/* Enhanced Project Box Styles */
+/* Project Boxes */
 .project-box {
-  @apply p-8 rounded-lg shadow-lg transition-transform transform hover:scale-105 hover:shadow-2xl;
-  background: white; /* White background for boxes */
-  position: relative;
-  border-radius: 1rem;
-  margin: 1rem;
-  display: inline-block;
-  width: calc(33% - 2rem); /* 3 boxes per row with margins */
-  box-sizing: border-box; /* Include padding and border in element's total width and height */
-  text-align: center; /* Center the text inside the box */
-  min-width: 300px; /* Ensure minimum width */
-  max-width: 350px; /* Limit maximum width */
+  width: 100%; /* Full width for mobile */
+  margin-bottom: 2rem; /* Add margin between boxes */
+  text-align: center;
 }
 
-/* Colorful Outline Effect */
-.project-box:nth-child(1) {
-  border: 4px solid blue;
+@media (min-width: 768px) {
+  .project-box {
+    width: calc(33% - 2rem); /* Maintain 3 boxes per row on larger screens */
+  }
 }
 
-.project-box:nth-child(2) {
-  border: 4px solid red;
+/* Projects Section Adjustments for Mobile */
+@media (max-width: 768px) {
+  #projects {
+    padding: 2rem 1rem;
+  }
+  
+  .project-box {
+    width: 100%; /* Full width on mobile */
+    margin-bottom: 1.5rem;
+  }
+  
+  .project-box .number {
+    width: 40px; /* Smaller circle */
+    height: 40px;
+    font-size: 1.5rem;
+  }
 }
 
-.project-box:nth-child(3) {
-  border: 4px solid yellow;
-}
-
-/* Numbered Circle */
-.project-box .number {
-  position: absolute;
-  top: -20px; /* Position it above the box */
-  left: 50%;
-  transform: translateX(-50%);
-  width: 50px; /* Larger circle */
-  height: 50px; /* Larger circle */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: white; /* Circle background */
-  border-radius: 50%; /* Make it a circle */
-  border: 3px solid #000; /* Border of the circle */
-  font-size: 1.75rem; /* Larger font size for the number */
-  font-weight: bold;
-  color: #000; /* Text color */
-}
-
-/* Project Box Text */
-.project-box h4 {
-  @apply text-2xl font-bold mb-4;
-}
-
-.project-box p {
-  @apply text-base font-light;
-  transition: color 0.3s ease-in-out;
-}
-
-.project-box:hover p {
-  color: #000000; /* Change text color on hover */
-}
-
-/* Colorful Background on Hover */
-.project-box:nth-child(1):hover {
-  background: linear-gradient(135deg, rgba(0, 0, 255, 0.1), rgba(0, 0, 255, 0.3));
-}
-
-.project-box:nth-child(2):hover {
-  background: linear-gradient(135deg, rgba(255, 0, 0, 0.1), rgba(255, 0, 0, 0.3));
-}
-
-.project-box:nth-child(3):hover {
-  background: linear-gradient(135deg, rgba(255, 255, 0, 0.1), rgba(255, 255, 0, 0.3));
-}
-
-#sidlabs {
-  padding: 4rem 2rem; /* Add padding for better spacing */
-  text-align: center; /* Center text */
-  background-color: #f5f5f5; /* Optional: Background color */
-}
-
-/* Robot animation styles */
-.robot-animation {
-  display: flex;
-  justify-content: center; /* Center the image horizontally */
-  margin-top: 2rem; /* Space between text and image */
-}
-
-.robot-animation img {
-  width: 100px; /* Adjust size as needed */
-  height: auto;
-  animation: rotate 2s linear infinite; /* Add animation if needed */
-}
-
-@keyframes rotate {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
-/* New Component Section */
-.new-component-box {
-  max-width: 600px; /* Adjust the width as needed */
-}
-
-/* Ensure the Font Awesome icons are imported */
-@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
-
-/* Add custom styles for positioning the quote icon */
-.testimonial-box {
-  position: relative;
-}
-
-.testimonial-box .fa-quote-left {
-  position: absolute;
-  top: -40px; /* Adjust as needed */
-  left: 50%;
-  transform: translateX(-50%);
-  color: #bbbbbb;
-}
-
-/* Form Input and Button Styles */
-/* Contact Form Container */
+/* Contact Form */
 .contact-form-container {
-  max-width: 600px;
+  max-width: 100%; /* Full width for mobile */
+  padding: 1.5rem;
+}
+
+/* Footer */
+.footer-container {
+  padding: 1rem; /* Adjust padding for mobile */
+}
+
+@media (max-width: 768px) {
+  .footer-text {
+    font-size: 0.9rem; /* Adjust font size for smaller screens */
+  }
+  
+  .footer-bottom {
+    font-size: 0.8rem; /* Smaller text for footer */
+  }
+}
+
+/* Mission Image */
+.mission-image {
+  width: 100%; /* Full width for smaller screens */
+  max-width: 100%; /* Ensure image doesn't overflow */
   margin: 0 auto;
-  padding: 2rem;
-  background: white;
-  border-radius: 0.75rem;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border: 1px solid #ddd;
-  position: relative;
-  overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.contact-form-container::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 5px;
-  background: linear-gradient(90deg, #007bff, #0056b3);
-  z-index: 1;
+/* Robot Animation */
+.robot-animation img {
+  width: 80px; /* Smaller size for mobile */
 }
 
-.contact-form-container:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+@media (max-width: 768px) {
+  /* Project section adjustments */
+  .project-box {
+    width: 100%; /* Full width for project boxes */
+    margin-bottom: 1.5rem;
+  }
 }
 
-.contact-form-container .form-content {
-  position: relative;
-  z-index: 2;
+/* General adjustments for mobile */
+@media (max-width: 768px) {
+  .typing-text {
+    font-size: 1.5rem; /* Decrease size for mobile */
+  }
+  
+  /* Adjust form input fields */
+  .form-input, .form-textarea {
+    padding: 0.75rem;
+  }
+  
+  /* Contact form submit button */
+  .submit-button {
+    font-size: 1rem;
+    padding: 0.75rem;
+  }
+  
+  /* Testimonial quote icon adjustments */
+  .fa-quote-left {
+    font-size: 1.5rem; /* Smaller size for mobile */
+  }
 }
 
-/* Form Fields */
-.form-input, .form-textarea {
-  width: 100%;
-  padding: 1rem;
-  border: 2px solid #ddd;
-  border-radius: 0.5rem;
-  font-size: 1rem;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.form-input:focus, .form-textarea:focus {
-  border-color: #007bff;
-  box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
-  outline: none;
-}
-
-/* Submit Button */
-.submit-button {
-  display: inline-block;
-  padding: 0.75rem 2rem;
-  font-size: 1rem;
-  font-weight: bold;
+/* Responsive Footer */
+.footer-container {
+  background-color: #333;
   color: white;
-  background-color: #007bff;
-  border: none;
-  border-radius: 0.5rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.3s ease;
+  padding: 2rem 1rem;
+  text-align: center;
 }
 
-.submit-button:hover {
-  background-color: #0056b3;
-  transform: translateY(-2px);
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-/* Footer Styles */
-.footer {
-  background: #f1f1f1;
-  padding: 2rem;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  border-top: 1px solid #ddd;
+.footer-text {
+  margin-bottom: 1.5rem;
 }
 
-.footer-logo {
-  font-size: 1.25rem;
-  font-weight: bold;
+.footer-heading {
+  font-size: 1.2rem;
+  line-height: 1.6;
 }
 
 .footer-info {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
 }
 
-.footer-info .text {
-  margin-right: 2rem;
-  font-size: 1rem;
-  text-align: left;
+.footer-info h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
 }
 
-.footer-info .social-icons {
-  display: flex;
-  gap: 1rem;
-}
-
-.footer-info .social-icons a {
-  font-size: 1.5rem;
-  color: #333;
+.footer-info p {
+  margin: 0;
 }
 
 .footer-bottom {
-  text-align: center;
-  font-size: 0.875rem;
-  color: #888;
+  font-size: 0.9rem;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-  .hero-heading {
-    font-size: 2.5rem;
-  }
-
-  .hero-subheading {
-    font-size: 1.5rem;
-  }
-
-  .nav-link {
-    font-size: 1rem;
-  }
-
-  .project-box {
-    width: calc(50% - 2rem);
-    margin-bottom: 1rem;
-  }
-
-  .testimonial-box {
-    padding: 1.5rem;
-  }
-
-  .contact-form-container {
-    padding: 1.5rem;
-  }
-
-  .footer {
-    flex-direction: column;
-    align-items: center;
-  }
+.footer-bottom a {
+  color: #007bff;
+  text-decoration: none;
 }
 
-@media (max-width: 640px) {
-  .hero-heading {
-    font-size: 2rem;
-  }
-
-  .hero-subheading {
-    font-size: 1.25rem;
-  }
-
-  .project-box {
-    width: calc(100% - 2rem);
-    margin-bottom: 1rem;
-  }
-
-  .footer-info {
-    flex-direction: column;
-    text-align: center;
-  }
+.footer-bottom a:hover {
+  text-decoration: underline;
 }
+
