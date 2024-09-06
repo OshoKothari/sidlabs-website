@@ -409,26 +409,15 @@ body {
   color: blue;
 }
 
-/* Mobile Menu */
 #mobile-menu {
-  transform: translateX(-100%);
   transition: transform 0.3s ease-in-out;
-}
-
-#mobile-menu.show {
-  transform: translateX(0); /* Slide in the mobile menu */
 }
 
 @media (min-width: 1024px) {
   #mobile-menu {
-    display: none; /* Hide mobile menu for large screens */
+    display: none; /* Hide mobile menu for larger screens */
   }
 }
 
-/* Adjust the size of the hamburger and close icons */
-#mobile-menu-button i,
-#close-menu i {
-  font-size: 2rem;
-}
 
 
