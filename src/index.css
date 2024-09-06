@@ -276,122 +276,37 @@ html {
 
 .form-input:focus, .form-textarea:focus {
   border-color: #007bff;
-  box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
-  outline: none;
+  box-shadow: 0 0 0 4px rgba(0, 123, 255, 0.25);
 }
 
-/* Submit Button */
-.submit-button {
-  display: inline-block;
-  padding: 0.75rem 2rem;
-  font-size: 1rem;
-  font-weight: bold;
-  color: white;
+.form-submit {
+  width: 100%;
+  padding: 1rem;
   background-color: #007bff;
+  color: white;
   border: none;
   border-radius: 0.5rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.submit-button:hover {
-  background-color: #0056b3;
-  transform: translateY(-2px);
-}
-
-/* Footer Styles */
-.footer {
-  background: #f1f1f1;
-  padding: 2rem;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  border-top: 1px solid #ddd;
-}
-
-.footer-logo {
   font-size: 1.25rem;
-  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-.footer-info {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.form-submit:hover {
+  background-color: #0056b3;
 }
 
-.footer-info .text {
-  margin-right: 2rem;
-  font-size: 1rem;
-  text-align: left;
+.form-submit:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0, 123, 255, 0.25);
 }
 
-.footer-info .social-icons {
-  display: flex;
-  gap: 1rem;
-}
-
-.footer-info .social-icons a {
-  font-size: 1.5rem;
-  color: #333;
-}
-
-.footer-bottom {
-  text-align: center;
+/* Error and Success Messages */
+.error-message {
+  color: #dc3545;
   font-size: 0.875rem;
-  color: #888;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-  .hero-heading {
-    font-size: 2.5rem;
-  }
-
-  .hero-subheading {
-    font-size: 1.5rem;
-  }
-
-  .nav-link {
-    font-size: 1rem;
-  }
-
-  .project-box {
-    width: calc(50% - 2rem);
-    margin-bottom: 1rem;
-  }
-
-  .testimonial-box {
-    padding: 1.5rem;
-  }
-
-  .contact-form-container {
-    padding: 1.5rem;
-  }
-
-  .footer {
-    flex-direction: column;
-    align-items: center;
-  }
-}
-
-@media (max-width: 640px) {
-  .hero-heading {
-    font-size: 2rem;
-  }
-
-  .hero-subheading {
-    font-size: 1.25rem;
-  }
-
-  .project-box {
-    width: calc(100% - 2rem);
-    margin-bottom: 1rem;
-  }
-
-  .footer-info {
-    flex-direction: column;
-    text-align: center;
-  }
+.success-message {
+  color: #28a745;
+  font-size: 0.875rem;
 }
