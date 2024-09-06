@@ -101,14 +101,26 @@ html {
   }
 }
 
-/* Disable Typing effect for mobile view */
+/* Typing effect with text wrapping for mobile view */
 @media (max-width: 640px) {
   .typing-container {
-    display: inline-block;
+    display: block; /* Change to block for text wrapping */
+    white-space: normal; /* Allow text wrapping */
+    overflow: hidden;
     font-size: 1.25rem; /* Adjust font size for mobile view */
-    white-space: normal; /* Allow normal text wrapping */
-    border-right: none; /* Remove caret effect */
-    animation: none; /* Disable typing animation */
+    border-right: 0; /* Remove caret effect */
+    animation: typing-mobile 5s steps(40, end) forwards;
+    max-width: 100%; /* Ensure container doesn't overflow */
+  }
+
+  /* Keyframes for typing effect with wrapping */
+  @keyframes typing-mobile {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
   }
 }
 
