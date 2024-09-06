@@ -30,9 +30,51 @@
   <meta name="robots" content="index, follow">
 </head>
 <body>
-  <div id="root"></div>
-  
+  <!-- Navbar with Hamburger Menu -->
+  <nav class="bg-white shadow-md fixed top-0 left-0 right-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between h-16">
+        <div class="flex-shrink-0 flex items-center">
+          <span class="text-xl font-bold">SidLabs</span>
+        </div>
+        <div class="-mr-2 flex items-center md:hidden">
+          <button id="menu-toggle" class="text-gray-800 inline-flex items-center justify-center p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+            <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+            </svg>
+          </button>
+        </div>
+        <div class="hidden md:flex md:space-x-8">
+          <a href="#about" class="nav-link">About Us</a>
+          <a href="#projects" class="nav-link">Flagship Projects</a>
+          <a href="#contact" class="nav-link">Contact Now</a>
+          <a href="#testimonials" class="nav-link">Testimonials</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden">
+      <a href="#about" class="block px-4 py-2 text-sm">About Us</a>
+      <a href="#projects" class="block px-4 py-2 text-sm">Flagship Projects</a>
+      <a href="#contact" class="block px-4 py-2 text-sm">Contact Now</a>
+      <a href="#testimonials" class="block px-4 py-2 text-sm">Testimonials</a>
+    </div>
+  </nav>
+
+  <div id="root" style="margin-top: 64px;"></div> <!-- Adjusted for Navbar height -->
+
   <!-- React Scripts -->
   <script src="/index.js"></script>
+
+  <!-- Menu Toggle Script -->
+  <script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuToggle.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  </script>
 </body>
 </html>
