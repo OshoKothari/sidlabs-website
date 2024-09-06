@@ -395,45 +395,40 @@ html {
     text-align: center;
   }
 }
-/* General Styles */
+/* General styles */
 body {
   font-family: 'Montserrat', sans-serif;
 }
 
-/* Navbar styles for desktop */
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+/* Navbar Links */
+.nav-link {
+  @apply text-lg font-medium text-black transition-colors duration-300 ease-in-out;
 }
 
-/* Hide mobile menu by default */
+.nav-link:hover {
+  color: blue;
+}
+
+/* Mobile Menu */
 #mobile-menu {
   transform: translateX(-100%);
   transition: transform 0.3s ease-in-out;
 }
 
-#mobile-menu ul li {
-  @apply py-4;
+#mobile-menu.show {
+  transform: translateX(0); /* Slide in the mobile menu */
 }
 
-#mobile-menu ul li a {
-  @apply text-lg font-medium;
-}
-
-/* Show mobile menu button on small screens */
-@media (max-width: 768px) {
-  #mobile-menu-button {
-    display: block;
-  }
-
-  nav {
-    display: none; /* Hide desktop menu on small screens */
-  }
-
+@media (min-width: 1024px) {
   #mobile-menu {
-    display: block;
+    display: none; /* Hide mobile menu for large screens */
   }
+}
+
+/* Adjust the size of the hamburger and close icons */
+#mobile-menu-button i,
+#close-menu i {
+  font-size: 2rem;
 }
 
 
