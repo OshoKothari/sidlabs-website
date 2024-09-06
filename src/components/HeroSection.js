@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import '@fortawesome/fontawesome-free/css/all.min.css';
+import React, { useState, useEffect } from 'react'; // Import React and the hooks
+import '@fortawesome/fontawesome-free/css/all.min.css'; // Import Font Awesome CSS
 
 const HeroSection = () => {
     const [showScrollTop, setShowScrollTop] = useState(false);
-    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
     const handleScroll = () => {
       if (window.scrollY > 200) {
@@ -12,38 +11,18 @@ const HeroSection = () => {
         setShowScrollTop(false);
       }
     };
-
+  
     const scrollToTop = () => {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     };
-
-    const toggleMobileMenu = () => {
-      setIsMobileMenuOpen(!isMobileMenuOpen);
-    };
-
+  
     useEffect(() => {
       window.addEventListener('scroll', handleScroll);
       return () => window.removeEventListener('scroll', handleScroll);
     }, []);
-
-    return (
-        <div>
-            {/* Mobile Menu */}
-            <div className={`fixed inset-0 bg-gray-800 bg-opacity-75 z-50 transition-transform transform ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'} md:hidden`}>
-                <div className="flex flex-col items-center justify-center h-full">
-                    <a href="#mission" className="text-white text-2xl mb-6" onClick={toggleMobileMenu}>About Us</a>
-                    <a href="#projects" className="text-white text-2xl mb-6" onClick={toggleMobileMenu}>Flagship Projects</a>
-                    <a href="#contact" className="text-white text-2xl mb-6" onClick={toggleMobileMenu}>Contact Now</a>
-                    <a href="#testimonial" className="text-white text-2xl mb-6" onClick={toggleMobileMenu}>Testimonials</a>
-                </div>
-            </div>
-            
-            {/* Hamburger Menu */}
-            <div className="fixed top-4 right-4 md:hidden z-50">
-                <button onClick={toggleMobileMenu} className="text-white text-3xl">
-                    <i className={`fas fa-${isMobileMenuOpen ? 'times' : 'bars'}`}></i>
-                </button>
-            </div>
+  
+  return (
+    <div>
 {/* Hero Section */}
 <section
   className="flex flex-col items-end justify-center h-screen text-right bg-cover bg-center bg-gray-100"
