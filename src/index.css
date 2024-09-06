@@ -396,14 +396,47 @@ html {
   }
 }
 
-/* Mobile Menu Styles */
-#mobile-menu a {
-  padding: 1rem;
-  display: block;
-  text-align: center;
-  border-bottom: 1px solid #ddd;
+/* Mobile Menu Button */
+#mobile-menu-button {
+  display: none; /* Hide by default */
 }
 
-#mobile-menu a:last-child {
-  border-bottom: none;
+/* Navbar */
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-link {
+  @apply px-4 py-2 text-lg font-medium text-black;
+}
+
+/* Mobile Menu Styles */
+#mobile-menu {
+  transform: translateX(-100%);
+  transition: transform 0.3s ease-in-out;
+}
+
+#mobile-menu ul li {
+  @apply py-4;
+}
+
+#mobile-menu ul li a {
+  @apply text-xl;
+}
+
+/* Show mobile menu button on small screens */
+@media (max-width: 768px) {
+  #mobile-menu-button {
+    display: block;
+  }
+  
+  nav {
+    display: none; /* Hide desktop menu on small screens */
+  }
+  
+  #mobile-menu {
+    display: block;
+  }
 }
