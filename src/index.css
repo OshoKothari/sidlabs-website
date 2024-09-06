@@ -69,42 +69,41 @@ html {
   transition: transform 0.3s ease-in-out;
 }
 
-/* Typing effect styles */
-.typing-container {
-  display: inline-block;
-  white-space: nowrap;
-  overflow: hidden;
-  border-right: 3px solid rgba(0, 0, 0, 0.75); /* Cursor effect */
-  animation: typing 3.5s steps(40, end) 1s 1 normal both, blink-caret 500ms steps(40, end) infinite normal both;
-  font-size: 2rem;
-}
-
-/* Keyframes for typing effect */
-@keyframes typing {
-  from { width: 0; }
-  to { width: 100%; }
-}
-
-/* Keyframes for blinking caret */
-@keyframes blink-caret {
-  from, to { border-color: transparent; }
-  50% { border-color: rgba(0, 0, 0, 0.75); }
-}
-
-/* Typing effect for mobile */
-@media (max-width: 640px) {
+/* Typing effect styles for web view */
+@media (min-width: 641px) {
   .typing-container {
-    font-size: 1.25rem; /* Reduce font size for mobile */
-    border-right: 2px solid rgba(0, 0, 0, 0.75); /* Adjust cursor thickness */
-    animation: typing-mobile 3.5s steps(30, end) 1s 1 normal both, blink-caret 500ms steps(40, end) infinite normal both;
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid rgba(0, 0, 0, 0.75); /* Cursor effect */
+    animation: typing 3.5s steps(40, end) 1s 1 normal both, blink-caret 500ms steps(40, end) infinite normal both;
+    font-size: 2rem; /* Adjust font size for web view */
   }
-  
-  /* Mobile-specific typing keyframes */
-  @keyframes typing-mobile {
+
+  /* Keyframes for typing effect */
+  @keyframes typing {
     from { width: 0; }
     to { width: 100%; }
   }
+
+  /* Keyframes for blinking caret */
+  @keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: rgba(0, 0, 0, 0.75); }
+  }
 }
+
+/* For mobile view, no typing effect */
+@media (max-width: 640px) {
+  .typing-container {
+    display: inline-block;
+    font-size: 1.25rem; /* Adjust font size for mobile view */
+    white-space: normal; /* Allow normal text wrapping */
+    border-right: none; /* Remove caret effect */
+    animation: none; /* Disable typing animation */
+  }
+}
+
 
 
 /* Style for Mission Image */
