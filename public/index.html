@@ -18,61 +18,102 @@
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.0.0/dist/tailwind.min.css" rel="stylesheet">
   
   <!-- Custom Styles -->
-  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="/index.css">
   
   <!-- Favicon -->
   <link rel="icon" href="/favicon.ico" type="image/x-icon">
-  
-  <!-- Web Manifest -->
-  <link rel="manifest" href="/manifest.json">
-  
-  <!-- Robots.txt -->
-  <meta name="robots" content="index, follow">
 </head>
 <body>
-  <!-- Navbar with Hamburger Menu -->
-  <nav class="bg-white shadow-md fixed top-0 left-0 right-0 z-50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex justify-between h-16">
-        <div class="flex-shrink-0 flex items-center">
-          <span class="text-xl font-bold">SidLabs</span>
-        </div>
-        <div class="-mr-2 flex items-center md:hidden">
-          <button id="menu-toggle" class="text-gray-800 inline-flex items-center justify-center p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
-            <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
-            </svg>
-          </button>
-        </div>
-        <div class="hidden md:flex md:space-x-8">
-          <a href="#about" class="nav-link">About Us</a>
-          <a href="#projects" class="nav-link">Flagship Projects</a>
-          <a href="#contact" class="nav-link">Contact Now</a>
-          <a href="#testimonials" class="nav-link">Testimonials</a>
-        </div>
-      </div>
+  <nav class="flex items-center justify-between p-4 bg-white shadow-md">
+    <div class="text-2xl font-bold">SidLabs</div>
+    <div class="lg:hidden">
+      <button id="hamburger" class="text-3xl">
+        <i class="fas fa-bars"></i>
+      </button>
     </div>
-
-    <!-- Mobile Menu -->
-    <div id="mobile-menu" class="hidden md:hidden">
-      <a href="#about" class="block px-4 py-2 text-sm">About Us</a>
-      <a href="#projects" class="block px-4 py-2 text-sm">Flagship Projects</a>
-      <a href="#contact" class="block px-4 py-2 text-sm">Contact Now</a>
-      <a href="#testimonials" class="block px-4 py-2 text-sm">Testimonials</a>
-    </div>
+    <ul class="hidden lg:flex space-x-6">
+      <li><a href="#about" class="nav-link">About Us</a></li>
+      <li><a href="#projects" class="nav-link">Flagship Projects</a></li>
+      <li><a href="#contact" class="nav-link">Contact Now</a></li>
+      <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
+    </ul>
   </nav>
 
-  <div id="root" style="margin-top: 64px;"></div> <!-- Adjusted for Navbar height -->
+  <div id="mobileMenu" class="hidden flex flex-col items-center space-y-4 p-4 bg-gray-200 lg:hidden">
+    <a href="#about" class="nav-link">About Us</a>
+    <a href="#projects" class="nav-link">Flagship Projects</a>
+    <a href="#contact" class="nav-link">Contact Now</a>
+    <a href="#testimonials" class="nav-link">Testimonials</a>
+  </div>
 
-  <!-- React Scripts -->
-  <script src="/index.js"></script>
+  <header class="hero-container text-center py-12">
+    <h1 class="hero-heading">Advancing Human Intelligence</h1>
+    <p class="hero-subheading">Through Innovation</p>
+    <div class="typing-container">
+      <span class="typing-text">Empowering the Future with Technology</span>
+    </div>
+    <button class="explore-button mt-8">Explore Now <i class="fas fa-arrow-right"></i></button>
+  </header>
 
-  <!-- Menu Toggle Script -->
+  <section id="about" class="p-8 bg-gray-100">
+    <h2 class="text-3xl font-bold text-center">About Us</h2>
+    <p class="text-center mt-4">SidLabs is a venture studio committed to advancing human intelligence through cutting-edge technology and innovation.</p>
+  </section>
+
+  <section id="projects" class="p-8">
+    <h2 class="text-3xl font-bold text-center mb-8">Flagship Projects</h2>
+    <div class="flex flex-wrap justify-center space-y-8 lg:space-y-0 lg:space-x-8">
+      <div class="project-box">
+        <div class="number">1</div>
+        <h4>Project One</h4>
+        <p>Innovating the AI landscape.</p>
+      </div>
+      <div class="project-box">
+        <div class="number">2</div>
+        <h4>Project Two</h4>
+        <p>Revolutionizing Business Intelligence.</p>
+      </div>
+      <div class="project-box">
+        <div class="number">3</div>
+        <h4>Project Three</h4>
+        <p>Pioneering Smart Technologies.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="testimonials" class="p-8 bg-gray-100">
+    <h2 class="text-3xl font-bold text-center">Testimonials</h2>
+    <div class="testimonial-box mt-8">
+      <i class="fa fa-quote-left"></i>
+      <p class="text-center">SidLabs has transformed the way we look at business intelligence. Their innovation is unmatched.</p>
+    </div>
+  </section>
+
+  <section id="contact" class="p-8">
+    <h2 class="text-3xl font-bold text-center mb-8">Contact Now</h2>
+    <div class="contact-form-container">
+      <form action="#" method="POST">
+        <input type="text" class="form-input" placeholder="Your Name" required>
+        <input type="email" class="form-input mt-4" placeholder="Your Email" required>
+        <textarea class="form-textarea mt-4" placeholder="Your Message" required></textarea>
+        <button type="submit" class="submit-button mt-4">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <footer class="footer-container">
+    <div class="footer-content">
+      <div class="footer-text">
+        <p>&copy; 2024 SidLabs. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
   <script>
-    const menuToggle = document.getElementById('menu-toggle');
-    const mobileMenu = document.getElementById('mobile-menu');
-
-    menuToggle.addEventListener('click', () => {
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    
+    hamburger.addEventListener('click', () => {
       mobileMenu.classList.toggle('hidden');
     });
   </script>
