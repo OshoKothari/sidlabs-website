@@ -30,9 +30,33 @@
   <meta name="robots" content="index, follow">
 </head>
 <body>
+  <!-- Mobile Menu Button -->
+  <div class="mobile-menu-button" onclick="toggleMenu()">
+    <i class="fas fa-bars"></i>
+  </div>
+
+  <!-- Mobile Menu -->
+  <nav id="mobile-menu" class="mobile-menu hidden">
+    <ul>
+      <li><a href="#about-us">About Us</a></li>
+      <li><a href="#projects">Flagship Projects</a></li>
+      <li><a href="#contact">Contact Now</a></li>
+      <li><a href="#testimonials">Testimonials</a></li>
+    </ul>
+  </nav>
+
+  <!-- Main Content -->
   <div id="root"></div>
   
   <!-- React Scripts -->
-  <script src="/index.js" defer></script>
+  <script src="/index.js"></script>
+  
+  <!-- Mobile Menu Script -->
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('mobile-menu');
+      menu.classList.toggle('hidden');
+    }
+  </script>
 </body>
 </html>
